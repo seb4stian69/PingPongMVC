@@ -1,4 +1,3 @@
-
 // Importamos las variables de "entorno"
 import { width as wdth, height as hgth, canvas, ctx } from "./env.mjs"
 
@@ -42,7 +41,6 @@ let fillData = function () {
     computer.fillData(ball)
     // Se genera la pelota
     ball.fillData(player.bars, computer.bars)
-
 }
 
 function seePoints(txt,x,y) {
@@ -56,11 +54,11 @@ function seePoints(txt,x,y) {
 /* Instancia y creacion de elementos */
 
 function HumanPlayer() {
-    this.bars = new Bars(width / 2 - 30, height - 20, 80, 20)
+    this.bars = new Bars(width / 2 - 30, height - 20, 90, 35)
 }
 
 function ComputerPlayer() {
-    this.bars = new Bars(width / 2 - 30, 0, 80, 20)
+    this.bars = new Bars(width / 2 - 30, 0, 90, 35)
 }
 
 HumanPlayer.prototype.viewsElements = function () {
@@ -221,12 +219,14 @@ Ball.prototype.fillData = function (player, cpu) {
 
     if (this.y - this.radius < 0 || this.y + this.radius > height) {
 
-        if (this.y + this.radius < 0) {
-
+        if (this.y - this.radius < 0) {
+            
+            console.log("Puntos para el jugador")
             pointsPayer += 1
 
         } else if (this.y + this.radius > height) {
 
+            console.log("Puntos para la cpu")
             pointsCPU += 1
             
         }
