@@ -113,13 +113,13 @@ Bars.prototype.viewsElements = function () {
 
 /*Controladores*/
 
-document.addEventListener('inputdown', function (event) {
+document.addEventListener('keydown', function (event) {
 
     inputArrowsPlayer[event.code] = true
 
 })
 
-document.addEventListener('inputup', function (event) {
+document.addEventListener('keyup', function (event) {
 
     delete inputArrowsPlayer[event.code]
 
