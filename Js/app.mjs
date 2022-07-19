@@ -113,13 +113,13 @@ Bars.prototype.viewsElements = function () {
 
 /*Controladores*/
 
-document.addEventListener('keydown', function (event) {
+document.addEventListener('inputdown', function (event) {
 
     inputArrowsPlayer[event.code] = true
 
 })
 
-document.addEventListener('keyup', function (event) {
+document.addEventListener('inputup', function (event) {
 
     delete inputArrowsPlayer[event.code]
 
@@ -127,13 +127,13 @@ document.addEventListener('keyup', function (event) {
 
 HumanPlayer.prototype.fillData = function () {
 
-    for (let key in inputArrowsPlayer) {
+    for (let input in inputArrowsPlayer) {
 
-        if (key == "ArrowLeft") {
+        if (input == "ArrowLeft") {
 
             this.bars.changeBarPosition(-5, height - 20)
 
-        } else if (key == "ArrowRight") {
+        } else if (input == "ArrowRight") {
 
             this.bars.changeBarPosition(4, height - 20)
 
@@ -149,19 +149,19 @@ HumanPlayer.prototype.fillData = function () {
 
 ComputerPlayer.prototype.fillData = function (ball) {
 
-    let diff = -((this.bars.x + (this.bars.width / 2) - ball.x))
+    let data = -((this.bars.x + (this.bars.width / 2) - ball.x))
 
-    if (diff < 0 && diff < -4) {
+    if (data < 0 && data < -4) {
 
-        diff = -5
+        data = -5
 
-    } else if (diff > 0 && diff > 4) {
+    } else if (data > 0 && data > 4) {
         
-        diff = 5
+        data = 5
 
     }
 
-    this.bars.changeBarPosition(diff, 0)
+    this.bars.changeBarPosition(data, 0)
 
     if (this.bars.x < 0) {
 
