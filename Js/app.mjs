@@ -1,11 +1,9 @@
-
 // Importamos las variables de "entorno"
 import { width,height,canvas,ctx } from "./env.mjs"
 
 // Objeto canvas
 canvas.width = width
 canvas.height = height
-
 
 /*Elementos globales*/
 let player = new HumanPlayer() // Jugador
@@ -28,14 +26,9 @@ let viewsElements = () =>  {
 }
 
 let fillData = () =>  {
-
-    // Se agregan los datos de player
     player.fillData()
-    // Se agregan los datos del CPU
     computer.fillData(ball)
-    // Se muestra la pelota
     ball.fillData(player.bars, computer.bars)
-
 }
 
 /* Instancia y creacion de elementos */ 
@@ -94,10 +87,8 @@ Bars.prototype.viewsElements = () =>  {
 // Eject
 function Eject() {
 
-    requestAnimationFrame(Eject)
     viewsElements()
     fillData()
+    requestAnimationFrame(Eject)
 
 }; Eject()
-
-
