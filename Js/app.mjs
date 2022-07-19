@@ -116,12 +116,14 @@ Bars.prototype.viewsElements = function () {
 document.addEventListener('keydown', function (event) {
 
     inputArrowsPlayer[event.code] = true
+    console.log("Click de prueba")
 
 })
 
 document.addEventListener('keyup', function (event) {
 
     delete inputArrowsPlayer[event.code]
+    console.log("Click de prueba")
 
 })
 
@@ -132,10 +134,13 @@ HumanPlayer.prototype.fillData = function () {
         if (input == "ArrowLeft") {
 
             this.bars.changeBarPosition(-5, height - 20)
+            console.log("Click de prueba izquierda")
+
 
         } else if (input == "ArrowRight") {
 
             this.bars.changeBarPosition(4, height - 20)
+            console.log("Click de derecha")
 
         } else {
 
