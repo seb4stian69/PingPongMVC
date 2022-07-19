@@ -28,9 +28,14 @@ let viewsElements = () =>  {
 }
 
 let fillData = () =>  {
+
+    // Se agregan los datos de player
     player.fillData()
+    // Se agregan los datos del CPU
     computer.fillData(ball)
+    // Se muestra la pelota
     ball.fillData(player.bars, computer.bars)
+
 }
 
 /* Instancia y creacion de elementos */ 
